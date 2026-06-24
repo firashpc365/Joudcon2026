@@ -4,6 +4,7 @@
     "composite": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "module": "Node16",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
