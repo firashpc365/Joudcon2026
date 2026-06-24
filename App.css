@@ -1,0 +1,215 @@
+/* Joudcon Main App Styles */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Main app container */
+#root {
+  min-height: 100vh;
+}
+
+/* Particle container */
+#tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Section base styles */
+.section-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Glass card enhancements */
+.glass-card {
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(249, 178, 51, 0.5);
+  box-shadow: 0 8px 32px rgba(249, 178, 51, 0.1);
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Link hover effects */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Image hover effects */
+img {
+  transition: transform 0.5s ease;
+}
+
+/* Form input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(249, 178, 51, 0.5);
+  box-shadow: 0 0 0 2px rgba(249, 178, 51, 0.2);
+}
+
+/* Modal animations */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+/* Card 3D tilt effect base */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Timeline node pulse */
+@keyframes node-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(249, 178, 51, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(249, 178, 51, 0);
+  }
+}
+
+.node-circle {
+  animation: node-pulse 2s ease-in-out infinite;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Success animation */
+@keyframes check-bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-check {
+  animation: check-bounce 0.5s ease-out;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 27, 68, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 178, 51, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 178, 51, 0.7);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid #F9B233;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  #tsparticles,
+  nav,
+  .hero-scroll {
+    display: none !important;
+  }
+  
+  .section-container {
+    break-inside: avoid;
+  }
+}
